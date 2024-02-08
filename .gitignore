@@ -263,4 +263,15 @@ poetry.toml
 # LSP config files
 pyrightconfig.json
 
+### Frontend files
+
+# HTML
+*.html
+
+# CSS
+*.css 
+
+# JS
+*.js
+
 # End of https://www.toptal.com/developers/gitignore/api/python,django
