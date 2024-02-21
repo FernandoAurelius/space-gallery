@@ -2,6 +2,17 @@
 <div class="pagina-inicial">
     <header class="cabecalho">
         <img src="{% static '/assets/logo/Logo(2).png' %}" alt="Logo da Space Gallery" />
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+                <div class="alert alert-success" role="alert">
+                    <p id="messages">{{ message }}</p>
+                </div>
+            {% else %}
+                <div class="alert alert-danger" role="alert">
+                    <p id="messages">{{ message }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
         <div class="cabecalho__busca">
             <div class="busca__fundo">
                 <form action="{% url 'search' %}">
@@ -19,6 +30,6 @@
                 <a href="{% url 'index' %}"><img src="{% static '/assets/ícones/1x/Home - ativo.png' %}"> Home</a>
                 <a href="{% url 'login' %}"><img src="{% static '/assets/ícones/1x/Mais vistas - inativo.png' %}"> Login</a>
                 <a href="{% url 'registration' %}"><img src="{% static '/assets/ícones/1x/Novas - inativo.png' %}"> Cadastro</a>
-                <a href="#"><img src="{% static '/assets/ícones/1x/Surpreenda-me - inativo.png' %}"> Surpreenda-me</a>
+                <a href="{% url 'logout' %}"><img src="{% static '/assets/ícones/1x/Surpreenda-me - inativo.png' %}"> Logout</a>            
             </nav>
         </section>
