@@ -42,9 +42,6 @@ def registration(request):
         form = RegistForm(request.POST)
         
         if form.is_valid():
-            if form['regist_password'].value() != form['confirm_password'].value():
-                messages.error(request, 'Senhas não são iguais!')
-                return redirect('registration')
             
             name = form['regist_name'].value()
             email = form['regist_email'].value()

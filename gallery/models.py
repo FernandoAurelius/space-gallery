@@ -1,5 +1,7 @@
 from django.db import models
 
+from django.contrib.auth.models import User
+
 from datetime import datetime
 
 class Photography(models.Model):
@@ -18,6 +20,7 @@ class Photography(models.Model):
     address = models.ImageField(upload_to="photographs/%Y/%m", blank=True)
     published = models.BooleanField(default=False)
     release_date = models.DateField(default=datetime.now, blank=False)
+    user = models.ForeignKey(to=User, on_delete=models.SET_NULL, null=True, blank=False, related_name='user')
     
 
     def __str__(self):

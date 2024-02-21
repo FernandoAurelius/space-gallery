@@ -57,3 +57,23 @@ class RegistForm(forms.Form):
             attrs=
             {'class':'form-control',
              'placeholder':'Digite sua senha novamente'}))
+    
+    def clean_regist_name(self):
+        regist_name = self.cleaned_data.get('regist_name')
+
+        if regist_name:
+            regist_name = regist_name.strip()
+            if ' ' in regist_name:
+                raise forms.ValidationError('O nome de usuário não pode ter espaços!')
+            else:
+                return regist_name
+
+    def clean_confirm_password(self):
+        regist_password = self.cleaned_data.get('regist_password')
+        confirm_password = self.cleaned_data.get('confirm_password')
+
+        if regist_password and confirm_password:
+            if regist_password != confirm_password:
+                raise forms.ValidationError('As senhas não são iguais!')
+            else:
+                return confirm_password
