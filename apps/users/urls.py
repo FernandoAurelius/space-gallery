@@ -1,5 +1,5 @@
 from django.urls import path
-from users.views import login, logout, registration
+from apps.users.views import login, logout, registration
 
 urlpatterns = [
     path('login', login, name='login'),

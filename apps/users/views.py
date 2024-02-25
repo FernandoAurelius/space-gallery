@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib import auth, messages
 from django.contrib.auth.models import User
 
-from users.forms import LoginForm, RegistForm
+from apps.users.forms import LoginForm, RegistForm
 
 def login(request):
     form = LoginForm()

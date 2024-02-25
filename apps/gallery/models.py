@@ -18,7 +18,7 @@ class Photography(models.Model):
     category = models.CharField(max_length=15, choices=CATEGORY_OPTIONS, default='')
     description = models.TextField(null=False, blank=False)
     address = models.ImageField(upload_to="photographs/%Y/%m", blank=True)
-    published = models.BooleanField(default=False)
+    published = models.BooleanField(default=True)
     release_date = models.DateField(default=datetime.now, blank=False)
     user = models.ForeignKey(to=User, on_delete=models.SET_NULL, null=True, blank=False, related_name='user')
     

@@ -15,6 +15,10 @@
                     <p class="imagem__descricao">{{ photography.subtitle }}</p>
                     <p class="imagem__texto">{{ photography.description }}</p>
                 </div>
+                <div>
+                    <a href="{% url 'edit' %}"><button class="btn btn-success col-12" style="padding: top 5px;">Editar</button></a>
+                    <a href="{% url 'delete' %}"><button type="submit" class="btn btn-danger col-12" style="padding: top 5px;">Deletar</button></a>
+                </div>
             </div>
         </div>
     </section>
