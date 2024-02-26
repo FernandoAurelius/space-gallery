@@ -46,8 +46,26 @@ def upload(request):
 
     return render(request, 'gallery/upload.html', {'form': form})
 
-def edit(request):
-    pass
+def edit(request, photo_id):
+    photo = Photography.objects.get(id=photo_id)
+    form = PhotographyForm(instance=photo)
 
-def delete(request):
-    pass
+    if request.method == 'POST':
+        form = PhotographyForm(request.POST, request.FILES, instance=photo)
+        if form.is_valid:
+            form.save()
+            messages.success(request, 'Fotografia foi salva com sucesso!')
+            return redirect(index)
+
+    return render(request, 'gallery/edit.html', {'form': form, 'photo_id': photo_id})
+
+def delete(request, photo_id):
+    photo = Photography.objects.get(id=photo_id)
+    photo.delete()
+    messages.success(request, 'Fotografia foi deletada com sucesso!')
+    return redirect(index)
+
+def filt(request, category):
+    photographys = Photography.objects.order_by('-release_date').filter(published=True, category=category)
+    
+    return render(request, 'gallery/index.html', {"cards": photographys})
