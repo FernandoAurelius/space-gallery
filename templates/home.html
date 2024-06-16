@@ -1,0 +1,403 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria Espacial - Apresentação</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="{% static '/assets/favicon/favicon.png' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(#041833, #04244F, #154580);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            margin: 0;
+            padding: 0;
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #154580;
+            color: #fff;
+        }
+
+        .navbar {
+            background-color: #04244F;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: #154580;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .navbar a:hover {
+            background-color: #154580;
+        }
+
+        .intro {
+            padding: 50px;
+        }
+
+        .list-group-mine .list-group-item {
+            background-color: #041833;
+            border-top: 1px solid #ffffff;
+            border-left-color: #fff;
+            border-right-color: #fff;
+            border-bottom-color: #fff;
+            color: #FFFFFF;
+        }
+
+        .rounded-image {
+            border-radius: 12px;
+        }
+
+        .gray-text {
+            color: #ccc;
+        }
+
+        .white-text {
+            color: #fff;
+        }
+
+        .carousel>.carousel-inner>.carousel-item>img {
+            width: 800px;
+            /* Yeap you can change the width and height*/
+            height: 800px;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .gradient-text {
+            font-size: 72px;
+            background: linear-gradient(-45deg, #1A6DFF, #C822FF, #6DC7FF, #E6ABFF);
+            background-size: 200% 200%;
+            animation: gradient 5s ease infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            background-clip: text;
+            color: transparent;
+        }
+
+        @media (max-width: 1199px) {
+            .gradient-text {
+                font-size: 60px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .gradient-text {
+                font-size: 52px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .gradient-text {
+                font-size: 48px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .gradient-text {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column vh-100">
+
+    <main class="container">
+        <div class="intro">
+
+            <div class="container mt-1 text-center">
+                <h1 class="gradient-text">Proposta do projeto</h1>
+                <p>Eu desenvolvi o “Space Gallery” com o objetivo de criar um ponto de encontro digital para todos que
+                    se
+                    encantam com o céu estrelado. Escolhi o Django por sua robustez e eficiência, o que me permitiu
+                    construir
+                    uma aplicação web que é ao mesmo tempo dinâmica e fácil de usar, seguindo uma lógica clara com o
+                    modelo
+                    MVT.
+                </p>
+                <hr>
+                <p>
+                    Na construção da aplicação, utilizei HTML para definir sua estrutura e CSS para dar um estilo visual
+                    limpo e
+                    moderno. O Bootstrap foi essencial para criar uma interface que responde bem em diferentes
+                    dispositivos.
+                    Para o controle de versão, optei pelo Git, que me ajuda a manter um histórico organizado das
+                    mudanças, e
+                    disponibilizei o código no GitHub, facilitando a colaboração e o compartilhamento do projeto.
+                </p>
+            </div>
+        </div>
+        <div class="list-group mt-1 mb-3" data-bs-theme="dark">
+            <div class="text-center">
+                <h1 class="gradient-text">Tecnologias Utilizadas</h1>
+                <p>Este projeto foi desenvolvido com uma variedade de tecnologias modernas para garantir a melhor
+                    experiência
+                    possível:</p>
+            </div>
+            <ul class="list-group list-group-mine mt-2">
+                <li class="list-group-item d-flex justify-content-between align-items-start list-group-item-dark">
+                    <img width="50" height="50" src="https://img.icons8.com/nolan/64/django.png" alt="django" />
+                    <div class="ms-2 me-auto gray-text">
+                        <div class="fw-bold white-text">Django</div>
+                        Framework de desenvolvimento web rápido e eficiente do Python, usado para
+                        definir toda a lógica da aplicação, segundo o Modelo MVT
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start list-group-item-dark">
+                    <img width="50" height="50" src="https://img.icons8.com/nolan/64/html.png" alt="html" />
+                    <div class="ms-2 me-auto gray-text">
+                        <div class="fw-bold white-text">HTML</div>
+                        Linguagem de Marcação de Hipertexto, usada pra definir a estrutura visível da
+                        aplicação
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start list-group-item-dark">
+                    <img width="50" height="50" src="https://img.icons8.com/nolan/64/css3.png" alt="css3" />
+                    <div class="ms-2 me-auto gray-text">
+                        <div class="fw-bold white-text">CSS</div>
+                        Linguagem de Estilização em Cascata, usada pra definir o estilo da interface da
+                        aplicação
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start list-group-item-dark">
+                    <img width="50" height="50" src="https://img.icons8.com/nolan/64/bootstrap.png" alt="bootstrap" />
+                    <div class="ms-2 me-auto gray-text">
+                        <div class="fw-bold white-text">Bootstrap</div>
+                        Framework front-end que fornece estruturas CSS para desenvolvimento rápido de
+                        aplicações web
+                    </div>
+                </li>
+                <li class="list-group-item list-group-item-dark d-flex justify-content-between align-items-start">
+                    <img width="50" height="50" src="https://img.icons8.com/nolan/64/git.png" alt="git" />
+                    <div class="ms-2 me-auto gray-text">
+                        <div class="fw-bold white-text">Git</div>
+                        Software de controle de versionamento de código, usado para rastrear e versionar
+                        o desenvolvimento do projeto, desde seu início.
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start list-group-item-dark">
+                    <img width="50" height="50" src="https://img.icons8.com/nolan/64/github.png" alt="github" />
+                    <div class="ms-2 me-auto gray-text">
+                        <div class="fw-bold white-text">GitHub</div>
+                        Plataforma de compartilhamento de repositórios Git, usada para hospedar o
+                        código-fonte da aplicação.
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start list-group-item-dark">
+                    <img width="50" height="50" src="https://fly.io/static/images/brand/brandmark-dark.svg"
+                        alt="fly.io" />
+                    <div class="ms-2 me-auto gray-text">
+                        <div class="fw-bold white-text">Fly.io</div>
+                        Platform-as-service que oferece facilidade no momento do deploy para diversas
+                        linguagens e modelos de aplicação, incluindo o Django
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <div class="list-group list-group-mine mt-2 mb-3">
+            <div class="text-center">
+                <h1 class="gradient-text">Funcionalidades do Projeto</h1>
+                <p>A proposta do projeto "Space Gallery" é a de trazer imagens de qualidade para os amantes do céu
+                    noturno, de seus mistérios e
+                    segredos. Possui funcionalidades excepcionais e ainda mais, incluindo:
+                </p>
+            </div>
+            <a href="{% url 'upload' %}" class="list-group-item list-group-item-action list-group-item-primary"
+                style="border-top-right-radius: 0.375rem; border-top-left-radius: 0.375rem;">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mt-2">🚀 Upload de Fotografias Espaciais</h5>
+                </div>
+            </a>
+            <a href="{% url 'index' %}" class="list-group-item list-group-item-action list-group-item-primary">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mt-2">💫 Visualização de uma galeria completa e compartilhada do Universo</h5>
+                </div>
+            </a>
+            <a href="{% url 'index' %}" class="list-group-item list-group-item-action list-group-item-primary">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mt-2">🗑️ Deleção de fotos</h5>
+                </div>
+            </a>
+            <a href="{% url 'index' %}" class="list-group-item list-group-item-action list-group-item-primary">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mt-2">🖌️ Edição de fotos</h5>
+                </div>
+            </a>
+            <a href="{% url 'upload' %}" class="list-group-item list-group-item-action list-group-item-primary">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mt-2">📋 Inclusão de descrições, legendas e fontes detalhadas das fotos</h5>
+                </div>
+            </a>
+            <a href="{% url 'registration' %}" class="list-group-item list-group-item-action list-group-item-primary">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mt-2">📇 Cadastro de Usuário</h5>
+                </div>
+            </a>
+            <a href="{% url 'login' %}" class="list-group-item list-group-item-action list-group-item-primary">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mt-2">👤 Login</h5>
+                </div>
+            </a>
+            <a href="{% url 'logout' %}" class="list-group-item list-group-item-action list-group-item-primary">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mt-2">💨 Logout</h5>
+                </div>
+            </a>
+        </div>
+        <hr>
+        <div class="list-group mt-1 mb-3" data-bs-theme="dark">
+            <div class="text-center">
+                <h1 class="gradient-text">Contatos</h1>
+                <p> <strong>Abaixo, você pode encontrar alguns dos links de contato que eu disponho. Sinta-se a
+                        vontade para me contatar e debater qualquer aspecto do projeto, ver outros projetos e
+                        repositórios ou só bater papo. 😸</strong></p>
+            </div>
+            <ul class="list-group list-group-mine mt-2">
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <img width="50" height="50" src="https://img.icons8.com/nolan/64/linkedin.png" alt="linkedin" />
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">LinkedIn</div>
+                        <p><a href="https://linkedin.com/in/devflores"
+                                class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Aqui!</a>
+                        </p>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <img width="50" height="50" src="https://img.icons8.com/nolan/64/gmail-new.png" alt="gmail-new" />
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">Gmail</div>
+                        <p><a href="https://mail.google.com/mail/u/0/?fs=1&to=miguelfernandoaurelius@gmail.com&su=Assunto&body=Corpo+da+mensagem&tf=cm"
+                                class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Aqui!</a>
+                        </p>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <img width="50" height="50" src="https://img.icons8.com/nolan/64/github.png" alt="github" />
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">GitHub</div>
+                        <p><a href="https://github.com/FernandoAurelius"
+                                class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Aqui!</a>
+                        </p>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <img width="50" height="50" src="https://img.icons8.com/nolan/64/portfolio.png" alt="portfolio" />
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">Portfolio</div>
+                        <p>Veja esse e outros projetos <a href="floresdev.com"
+                                class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">aqui!</a>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="container-fluid mb-3">
+            <div id="carouselExampleCaptions" class="carousel slide caroulsel-dark">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="text-center">
+                    <h1 class="gradient-text">Veja algumas das fotos disponíveis no Space Gallery! ✨</h1>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://stsci-opo.org/STScI-01G77PKYA4T05YKJ3EDQ36NZCX.png"
+                        class="d-block w-100 rounded-image" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Nebulosa de Carina</h5>
+                            <p>Sob o manto celeste, a Nebulosa de Carina desdobra-se em véus de luz e sombra, uma
+                                tapeçaria cósmica tecida pelo sopro das estrelas.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://revistaplaneta.com.br/wp-content/uploads/sites/3/2022/03/galaxia.jpg" class="d-block w-100 rounded-image" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Galáxia NGC 1079</h5>
+                            <p>Um redemoinho de estrelas dançando em harmonia cósmica, pintando no tecido do universo
+                                uma espiral de mistérios insondáveis.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://www.nasa.gov/wp-content/uploads/2023/03/pillars_of_creation.jpg" class="d-block w-100 rounded-image" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Pilares da Criação</h5>
+                            <p>Os Pilares da Criação se erguem como monumentos etéreos, dedos cósmicos que acariciam o
+                                berço das estrelas, tecendo o destino do cosmos.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </main>
+    <!-- Rodapé da página -->
+    <footer class="text-center text-white mt-auto" style="background-color: #28242c;">
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); color: white;">
+            @2024
+            <a class="text-white text-center" style="color: white;" href="https://linkedin.com/in/devflores">Fernando
+                Aurelius</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

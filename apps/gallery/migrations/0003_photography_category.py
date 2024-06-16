@@ -6,13 +6,22 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('gallery', '0002_photography_delete_fotografia'),
+        ("gallery", "0002_photography_delete_fotografia"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='photography',
-            name='category',
-            field=models.CharField(choices=[('NEBULA', 'Nebulosa'), ('STAR', 'Estrela'), ('GALAXY', 'Galáxia'), ('PLANET', 'Planeta')], default='', max_length=15),
+            model_name="photography",
+            name="category",
+            field=models.CharField(
+                choices=[
+                    ("NEBULA", "Nebulosa"),
+                    ("STAR", "Estrela"),
+                    ("GALAXY", "Galáxia"),
+                    ("PLANET", "Planeta"),
+                ],
+                default="",
+                max_length=15,
+            ),
         ),
     ]

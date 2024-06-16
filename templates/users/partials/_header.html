@@ -1,32 +1,26 @@
 {% load static %}
-<div class="pagina-inicial">
+<div class="pagina-inicial vh-100" style="margin:20px;">
     <header class="cabecalho">
         <img src="{% static '/assets/logo/Logo(2).png' %}" alt="Logo da Space Gallery" />
-        {% include 'users/partials/_alerts.html' %}
+        {% include 'gallery/partials/_alerts.html' %}
         <div class="cabecalho__busca">
             <div class="busca__fundo">
                 <form action="{% url 'search' %}">
-                    <input class="busca__input" type="text" name="search" placeholder="O que você procura?"
-                        style="color: #ccc; padding: 20px;">
+                    <input class="busca__input" type="text" name="search" placeholder="O que você procura?" style="color: #ccc; padding: 20px;">
                     <button class="busca__botao" type="submit">
-                        <img class="busca__icone" src="{% static '/assets/ícones/1x/search.png' %}"
-                            alt="ícone de search">
+                        <img class="busca__icone" src="{% static '/assets/ícones/1x/search.png' %}" alt="ícone de search">
                     </button>
                 </form>
             </div>
         </div>
     </header>
-    <main class="principal">
+    <main class="principal flex-fill">
         <section class="menu-lateral">
-            <nav class="menu-lateral__navegacao">
+            <nav class="menu-lateral__navegacao" style="justify-self: flex-start;">
                 <a href="{% url 'index' %}"><img src="{% static '/assets/ícones/1x/Home - ativo.png' %}"> Home</a>
-                <a href="{% url 'login' %}"><img src="{% static '/assets/ícones/1x/Mais vistas - ativo.png' %}">
-                    Login</a>
-                <a href="{% url 'registration' %}"><img src="{% static '/assets/ícones/1x/Novas - ativo.png' %}">
-                    Cadastro</a>
-                <a href="{% url 'logout' %}"><img src="{% static '/assets/ícones/1x/Surpreenda-me - ativo.png' %}">
-                    Logout</a>
-                <a href="{% url 'upload' %}"><img src="{% static '/assets/ícones/1x/Nova Imagem.png' %}">
-                    Nova Imagem</a>
+                <a href="{% url 'login' %}"><img src="{% static '/assets/ícones/1x/Mais vistas - ativo.png' %}"> Login</a>
+                <a href="{% url 'registration' %}"><img src="{% static '/assets/ícones/1x/Novas - ativo.png' %}"> Cadastro</a>
+                <a href="{% url 'logout' %}"><img src="{% static '/assets/ícones/1x/Surpreenda-me - ativo.png' %}"> Logout</a>            
+                <a href="{% url 'upload' %}"><img src="{% static '/assets/ícones/1x/Nova Imagem.png' %}"> Nova Imagem</a>            
             </nav>
         </section>

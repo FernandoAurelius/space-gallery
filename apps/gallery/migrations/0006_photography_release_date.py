@@ -7,13 +7,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('gallery', '0005_photography_published'),
+        ("gallery", "0005_photography_published"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='photography',
-            name='release_date',
+            model_name="photography",
+            name="release_date",
             field=models.DateTimeField(default=datetime.datetime.now),
         ),
     ]

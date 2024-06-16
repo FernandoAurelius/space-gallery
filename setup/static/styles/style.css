@@ -31,7 +31,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     min-height: 100vh;
     background: linear-gradient(#041833,#04244F,#154580);
     background-repeat: no-repeat;
@@ -93,14 +93,26 @@ table {
 }
 
 .busca__fundo {
-    align-items: center;
+    align-items: center; /* Centraliza verticalmente */
     background-color: #041A37;
     border-radius: 8px;
     display: flex;
+    justify-content: space-between;
     margin: 0 auto;
     width: 100%;
-    position: relative;
-    overflow: hidden;
+}
+
+.busca__botao {
+    background-color: transparent;
+    border: none;
+    color: #000; /* Cor do texto */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
 }
 
 .busca__input {
@@ -108,7 +120,7 @@ table {
     background-color: transparent;
     border: none;
     font-size: 1rem;
-    height: 24px;
+    height: 25px;
     padding: 10px;
     width: 500px;
 }
@@ -117,20 +129,6 @@ table {
     cursor: pointer;
     width: 2rem;
     height: 2rem;
-}
-
-.busca__botao {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    z-index: 1;
 }
 
 .cards {
@@ -149,6 +147,7 @@ table {
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: space-between;
+    width: auto;
 }
 
 .card {
@@ -272,7 +271,7 @@ table {
 }
 
 .menu-lateral__navegacao a {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     align-items: center;
     display: flex;
     margin-bottom: 1.5rem;
@@ -346,6 +345,7 @@ table {
 .principal {
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 
 .rodape {
@@ -403,7 +403,6 @@ table {
     --bs-alert-bg: transparent;
     --bs-alert-padding-x: 1rem;
     --bs-alert-padding-y: 1rem;
-    --bs-alert-font-family: Montserrat;
     --bs-alert-margin-bottom: 1rem;
     --bs-alert-color: inherit;
     --bs-alert-border-color: transparent;
@@ -418,16 +417,22 @@ table {
     border-radius: var(--bs-alert-border-radius);
 }
 
-.alert-danger {
-    --bs-alert-color: #842029;
-    --bs-alert-bg: #f8d7da;
-    --bs-alert-border-color: #f5c2c7;
+.alert-primary {
+    --bs-alert-color: #084298;
+    --bs-alert-bg: #cfe2ff;
+    --bs-alert-border-color: #b6d4fe;
 }
 
 .alert-success {
     --bs-alert-color: #0f5132;
     --bs-alert-bg: #d1e7dd;
     --bs-alert-border-color: #badbcc;
+}
+
+.alert-danger {
+    --bs-alert-color: #842029;
+    --bs-alert-bg: #f8d7da;
+    --bs-alert-border-color: #f5c2c7;
 }
 
 .row {
@@ -448,7 +453,7 @@ table {
 .btn {
     --bs-btn-padding-x: 0.75rem;
     --bs-btn-padding-y: 0.375rem;
-    --bs-btn-font-family: Montserrat;
+    --bs-btn-font-family: ;
     --bs-btn-font-size: 1rem;
     --bs-btn-font-weight: 400;
     --bs-btn-line-height: 1.5;
@@ -486,7 +491,6 @@ table {
     --bs-btn-bg: #198754;
     --bs-btn-border-color: #198754;
     --bs-btn-hover-color: #fff;
-    --bs-btn-font-family: Montserrat;
     --bs-btn-hover-bg: #157347;
     --bs-btn-hover-border-color: #146c43;
     --bs-btn-focus-shadow-rgb: 60,153,110;
@@ -500,7 +504,6 @@ table {
 }
 
 .btn-danger {
-    --bs-btn-font-family: Montserrat;
     color: #fff;
     background-color: #dc3545;
     border-color: #dc3545;
@@ -512,7 +515,6 @@ table {
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
     font-weight: 400;
-    font-family: Montserrat;
     line-height: 1.5;
     color: #212529;
     background-color: #fff;
@@ -528,7 +530,6 @@ table {
 .form-check {
     display: block;
     min-height: 1.5rem;
-    font-family: Montserrat;
     padding-left: 1.5em;
     margin-bottom: 0.125rem;
 }
@@ -536,7 +537,6 @@ table {
 .form-check-input {
     width: 1em;
     height: 1em;
-    font-family: Montserrat;
     margin-top: 0.25em;
     vertical-align: top;
     background-color: #fff;
@@ -549,4 +549,41 @@ table {
     appearance: none;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+}
+
+.text-center {
+    text-align: center !important;
+}
+.p-3 {
+    padding: 1rem !important;
+}
+
+.text-white {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+.mt-auto {
+    margin-top: auto !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+.p-3 {
+    padding: 1rem !important;
+}
+
+.text-white {
+    color: #FFFFFF;
+}
+
+.text-center {
+    text-align: center !important;
+}
+.mt-auto {
+    margin-top: auto !important;
 }

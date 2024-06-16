@@ -1,7 +1,7 @@
 {% extends 'gallery/base.html' %}
 {% load static %}
 {% block content %}
-            <section class="galeria" style="margin-left: 5em">
+            <section class="galeria" style="margin-right: 50px;">
                 <form action="{% url 'upload' %}" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="row">
@@ -19,6 +19,4 @@
             </section>
         </main>
     </div>
-</body>
-
 {% endblock %}

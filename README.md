@@ -3,7 +3,7 @@ Project made following the **"Create applications with Python"** course of @Alur
 It's an incredible project on how to create the backend of an web application using Django! 🪐   
 
 ## **Description** 
-This is the repository for the Alura Space project, developed as part of the "Django: templates and best practices" course at Alura.    **Alura Space** 🚀 is a web application that allows users to share and view space-related images, created using Django! <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plainsvg"/>  
+This is the repository for the Space Gallery project, developed as part of the "Django: templates and best practices" course at Alura.    **Space Gallery** 🚀 is a web application that allows users to share and view space-related images, created using Django! <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plainsvg"/>  
 
 ## **Functionalities**
 **User registration** 🧑‍💻  

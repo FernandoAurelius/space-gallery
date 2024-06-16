@@ -9,17 +9,20 @@
     <title>Space Gallery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Nunito:wght@400;500;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="{% static '/assets/favicon/favicon.png' %}">
     <link rel="stylesheet" href="{% static '/styles/style.css' %}">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Nunito:wght@300&display=swap')
+        .form-control {
+            margin-bottom: 10px; 
+            padding: 5px; 
+            line-height: 1.2; 
+        }
     </style>
 </head>
 
-<body>
+<body class="d-flex flex-column vh-100">
     {% include 'gallery/partials/_header.html' %}
     {% block content %}{% endblock %}
     {% include 'gallery/partials/_footer.html' %}

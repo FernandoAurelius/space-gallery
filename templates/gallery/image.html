@@ -15,10 +15,12 @@
                     <p class="imagem__descricao">{{ photography.subtitle }}</p>
                     <p class="imagem__texto">{{ photography.description }}</p>
                 </div>
+                {% if photography.user == request.user %}
                 <div>
                     <a href="{% url 'edit' photography.id %}"><button class="btn btn-success col-12" style="margin-top: 10px; margin-left: 5px;">Editar</button></a>
                     <a href="{% url 'delete' photography.id %}"><button type="submit" class="btn btn-danger col-12" style="margin-top: 10px; margin-left: 5px;">Deletar</button></a>
                 </div>
+                {% endif %}
             </div>
         </div>
     </section>

@@ -5,55 +5,62 @@ from django.contrib.auth.models import User
 
 from apps.users.forms import LoginForm, RegistForm
 
+
 def login(request):
     form = LoginForm()
 
-    if request.method == 'POST':
+    if request.method == "POST":
 
-            form = LoginForm(request.POST)
+        form = LoginForm(request.POST)
 
-            if form.is_valid():
-                name = form['login_name'].value()
-                password = form['password'].value()
+        if form.is_valid():
+            name = form["login_name"].value()
+            password = form["password"].value()
 
-            user = auth.authenticate(request, username=name, password=password)
+        user = auth.authenticate(request, username=name, password=password)
 
-            if user is not None:
-                auth.login(request, user=user)
-                messages.success(request, f'Usuário(a) {name} logado com sucesso!')
-                return redirect('index')
-            else:
-                messages.error(request, 'Erro ao efetuar login: usuário ou senha incorretos!')
-                return redirect('login')
+        if user is not None:
+            auth.login(request, user=user)
+            messages.success(request, f"Usuário(a) {name} logado com sucesso!")
+            return redirect("index")
+        else:
+            messages.error(
+                request, "Erro ao efetuar login: usuário ou senha incorretos!"
+            )
+            return redirect("login")
 
-    return render(request, 'users/login.html', {'form': form})
+    return render(request, "users/login.html", {"form": form})
+
 
 def logout(request):
     auth.logout(request)
-    messages.success(request, 'Logout efetuado com sucesso')
-    return redirect('login')
+    messages.success(request, "Logout efetuado com sucesso")
+    return redirect("login")
+
 
 def registration(request):
 
     form = RegistForm()
 
-    if request.method == 'POST':
-        
+    if request.method == "POST":
+
         form = RegistForm(request.POST)
-        
+
         if form.is_valid():
-            
-            name = form['regist_name'].value()
-            email = form['regist_email'].value()
-            password = form['regist_password'].value()
+
+            name = form["regist_name"].value()
+            email = form["regist_email"].value()
+            password = form["regist_password"].value()
 
             if User.objects.filter(username=name).exists():
-                messages.error(request, 'Nome de usuário já existe!')
-                return redirect('registration')
-            
-            user = User.objects.create_user(username=name, email=email, password=password)
-            user.save()
-            messages.success(request, 'Cadastro efetuado com sucesso!')
-            return redirect('login')
+                messages.error(request, "Nome de usuário já existe!")
+                return redirect("registration")
 
-    return render(request, 'users/registration.html', {'form': form})
+            user = User.objects.create_user(
+                username=name, email=email, password=password
+            )
+            user.save()
+            messages.success(request, "Cadastro efetuado com sucesso!")
+            return redirect("login")
+
+    return render(request, "users/registration.html", {"form": form})
